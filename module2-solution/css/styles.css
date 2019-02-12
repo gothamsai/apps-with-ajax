@@ -1,3 +1,158 @@
-div {
 
+
+body {
+
+	font-family: Georgia, serif;
+	margin: 0px;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+.heading1 {
+	font-size: 175%;
+	padding: 10px 10px 20px 10px;
+	text-align: center;
+}
+
+
+.heading2 {
+	display: none;
+}
+
+.section-container {
+	
+}
+
+.section-wrapper {
+	padding: 10px;
+	float: left;
+}
+
+.section {
+	background-color: #BEBEBE;
+	border: 1px solid black;
+}
+
+.clear-div {
+	clear: both;
+}
+
+.section-title {
+	font-size: 125%;
+	display: block;
+	width: 150px;
+	float: right;
+	color: #f9f9f9;
+	padding: 5px;
+	margin-bottom: 5px;
+	text-align: center;
+	border: 1px solid black;
+	border-width: 0px 0px 1px 1px;
+}
+
+.section-title2 {
+	display: none;
+}
+
+.blue-background {
+	background-color: #428bca;
+}
+
+.red-background {
+	background-color: #d9534f;
+}
+
+.green-background {
+	background-color: #5cb85c;
+}
+
+
+.section-content {
+	clear: both;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 15px;
+	padding-right: 15px;
+	max-height: 175px;
+	overflow: hidden;
+}
+
+.section-content:hover {
+	overflow-y: visible;
+	cursor: ns-resize;
+}
+
+@media (min-width: 992px) {
+
+	#section-wrapper1 {
+		width: 33.33%;
+	}
+
+	#section-wrapper2 {
+		width: 33.33%;
+	}
+
+	#section-wrapper3 {
+		width: 33.33%;
+	}
+}
+
+
+@media (min-width: 768px) and (max-width: 991px) {
+	#section-wrapper1 {
+		width: 50%;
+	}
+
+	#section-wrapper2 {
+		width: 50%;
+	}
+
+	#section-wrapper3 {
+		width: 100%;
+	}
+}
+
+
+@media (max-width: 767px) {
+	#section-wrapper1 {
+		width: 100%;
+	}
+
+	#section-wrapper2 {
+		width: 100%;
+	}
+
+	#section-wrapper3 {
+		width: 100%;
+	}
+
+	.heading2 {
+		padding: 10px 10px 20px 10px;
+		font-size: 110%;
+		font-family: "Courier New", Courier, monospace;
+		text-align: left;
+		display: block;
+	}
+
+	.heading1 {
+		display: none;
+	}
+
+	.section-title {
+		display: none;
+	}
+
+	.section-title2 {
+		font-size: 125%;
+		display: block;
+		width: 100%;
+		color: #f9f9f9;
+		padding: 5px;
+		margin-bottom: 5px;
+		text-align: center;
+		border: 1px solid black;
+		border-width: 0px 0px 1px 0px;
+	}
 }
