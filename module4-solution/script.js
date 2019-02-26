@@ -65,4 +65,18 @@ for (var i = 0; i < names.length; i++) {
   }
 }
 
+var greetPerson = function (name) {
+	var firstLetterOfName = name.charAt(0).toLowerCase();
+	if (firstLetterOfName === 'j') {
+		return byeSpeaker.speakSimple(name);
+	} else {
+		return helloSpeaker.speakSimple(name);
+	}
+};
+
+var greetings = names.map(greetPerson);
+
+console.log(greetings);
+
+
 })();
