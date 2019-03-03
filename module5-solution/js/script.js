@@ -188,7 +188,6 @@ function buildAndShowAboutRatingStars (aboutHtml) {
 	aboutHtml = insertProperty(aboutHtml, "rating", randomRating + "-star rating");
 
 	insertHtml("#main-content", aboutHtml);
-	
 }
 
 
