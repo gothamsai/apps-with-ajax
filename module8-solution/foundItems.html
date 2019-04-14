@@ -1,0 +1,10 @@
+<div class="float-left">
+<ol>
+	<li ng-repeat="item in narrowItDownCtrl.found">
+		{{ item.short_name }}, {{ item.name }}, {{item.description}}
+		<button ng-click="narrowItDownCtrl.onRemove({index: $index});">Don't want this one!</button>
+	</li>
+</ol>
+<br/>
+</div>
+<div class="error clear-float" ng-if="narrowItDownCtrl.nothingFound()">Nothing found!</div>
