@@ -34,12 +34,10 @@
 		
 		narrowItDownCtrl.narrowItDown = function () {
 			
-			console.log("searchTerm: ", narrowItDownCtrl.searchTerm);
 			var promise = MenuSearchService.getMatchedMenuItems(narrowItDownCtrl.searchTerm);
 
 			promise.then(function (response) {
 				narrowItDownCtrl.found = response;
-				console.log("response: ", response);
     		})
     		.catch(function (error) {
       			console.log(error);
