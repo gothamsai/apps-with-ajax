@@ -13,7 +13,7 @@
 	function FoundItemsDirective() {
 
 		var ddo = {
-			templateUrl: '/apps-with-ajax/module8-solution/foundItems.html',
+			templateUrl: 'foundItems.html',
 			scope: {
 				found: '<',
 				onRemove: '&'
