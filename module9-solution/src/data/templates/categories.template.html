@@ -1,0 +1,9 @@
+<div ng-repeat="category in $ctrl.categories" class="col-md-3 col-sm-4 col-xs-6 col-xxs-12"
+		ui-sref="items({categoryId: category.short_name})">
+  <a href="#">
+    <div class="category-tile">
+      <img width="200" height="200" src="images/menu/{{category.short_name}}/{{category.short_name}}.jpg" alt="{{name}}">
+      <span>{{category.name}}({{category.short_name}})</span>
+    </div>
+  </a>
+</div>
