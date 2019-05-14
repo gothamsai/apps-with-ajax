@@ -1,0 +1,118 @@
+<div class="container">
+	<h2 id="menu-categories-title" class="text-center">Sign Up Form</h2>
+
+	<br/>
+	<form name="userInfoForm" novalidate>
+
+		<div class="input-group">
+			<label class="form-label">First Name: </label>
+			<input type="text" 
+				class="form-input"
+				ng-model="signUpCtrl.firstName"
+				name="firstName"
+				required
+				ng-minlength="1" />
+			<span
+            	ng-if="(userInfoForm.firstName.$error.minlength || userInfoForm.firstName.$error.required) && userInfoForm.firstName.$touched"
+				class="error">
+            	First name must be at least 1 character long
+			</span>
+		</div>
+
+		<br/>
+		<div class="input-group">
+			<label class="form-label">Last Name: </label>
+			<input type="text" 
+				class="form-input"
+				ng-model="signUpCtrl.lastName"
+				name="lastName"
+				required
+				ng-minlength="1" />
+			<span
+            	ng-if="(userInfoForm.lastName.$error.minlength || userInfoForm.lastName.$error.required) && userInfoForm.lastName.$touched"
+				class="error">
+            	Last name must be at least 1 character long
+			</span>
+		</div>
+
+
+		<br/>
+		<div class="input-group">
+			<label class="form-label">Email: </label>
+			<input type="email" 
+				class="form-input"
+				ng-model="signUpCtrl.emailAddress"
+				name="emailAddress"
+				required />
+			<span
+				ng-if="userInfoForm.emailAddress.$invalid && userInfoForm.emailAddress.$touched"
+				class="error">
+            	Must be a valid email address: handle@domain format
+			</span>
+		</div>
+
+		<br/>
+		<div class="input-group">
+			<label class="form-label">Phone Number: </label>
+			<input type="text" 
+				placeholder="###-###-####"
+				pattern="(\d{3})-(\d{3})-(\d{4})"
+				class="form-input"
+				ng-model="signUpCtrl.phoneNumber"
+				name="phoneNumber"
+				required />
+			<span 
+				ng-if="userInfoForm.phoneNumber.$invalid && userInfoForm.phoneNumber.$touched"
+				class="error">
+            	Phone must be in the format ###-###-####.
+          	</span>
+		</div>
+
+		<div class="input-group">
+			<label class="form-label">Favorite Item: </label>
+			<input type="text" 
+				placeholder="Menu Item Number"
+				class="form-input"
+				ng-model="signUpCtrl.menuItemShortName"
+				ng-change="signUpCtrl.validateMenuItem()"
+				name="menuItemShortName"
+				required
+				ng-minlength="2"
+				ng-maxLength="3" />
+			<span
+            	ng-if="(userInfoForm.menuItemShortName.$error.minlength || userInfoForm.menuItemShortName.$error.required || userInfoForm.menuItemShortName.$error.maxlength) && userInfoForm.menuItemShortName.$touched"
+				class="error">
+            	Menu Item number must be at least 2 characters.
+			</span>
+			<span
+            	ng-if="(userInfoForm.menuItemShortName.$error.maxlength) && userInfoForm.menuItemShortName.$touched"
+				class="error">
+            	Menu Item number must be no more than 3 characters .
+			</span>
+			<span
+            	ng-if="(!userInfoForm.menuItemShortName.$error.minlength && !userInfoForm.menuItemShortName.$error.maxlength && !signUpCtrl.menuItemValid) && userInfoForm.menuItemShortName.$touched"
+				class="error">
+            	No such menu number exists.
+			</span>
+
+			</br>
+			</br>
+			<button
+				class="form-input"
+          		ng-disabled="userInfoForm.$invalid && !signUpCtrl.menuItemValid"
+          		ng-click="signUpCtrl.submit()">Submit</button>
+
+			
+			</br>
+			</br>
+			<div 
+				class="form-input"
+				ng-if="signUpCtrl.infoSaved">
+				Your information has been saved.
+			</div>
+
+		</div>
+
+	</form>
+
+</div>

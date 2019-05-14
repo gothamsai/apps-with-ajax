@@ -1,0 +1,52 @@
+<div class="container">
+	<h2 id="menu-categories-title" class="text-center">My Info</h2>
+	
+	<div ng-if="myInfoCtrl.infoSaved">
+
+		<span class="infoLabel">First Name: </span>
+		<span class="form-input">{{myInfoCtrl.firstName}}</span>
+
+		<br/>
+		<span class="infoLabel">LastName</span>
+		<span class="form-input">{{myInfoCtrl.lastName}}</span>
+
+		<br/>
+		<span class="infoLabel">Email Address</span>
+		<span class="form-input">{{myInfoCtrl.emailAddress}}</span>
+
+		<br/>
+		<span class="infoLabel">Phone Number</span>
+		<span class="form-input">{{myInfoCtrl.phoneNumber}}</span>
+
+		<br/>
+		<div ng-if="myInfoCtrl.menuItem != null">
+			<div class="row">
+    			<div class="col-sm-5">
+      				<div class="menu-item-photo">
+        				<div>{{myInfoCtrl.menuItem.short_name}}</div>
+        					<img class="img-responsive" width="250" height="150" ng-src="{{myInfoCtrl.basePath}}/images/{{myInfoCtrl.menuItem.short_name}}.jpg" alt="{{myInfoCtrl.menuItem.name}}">
+      					</div>
+      					<div class="menu-item-price">{{myInfoCtrl.menuItem.price_small | currency}}<span> {{myInfoCtrl.menuItem.small_portion_name}}</span> {{myInfoCtrl.menuItem.price_large | currency}} <span>{{myInfoCtrl.menuItem.large_portion_name}}</span>
+						</div>
+    				</div>
+    				<div class="menu-item-description col-sm-7">
+      					<h3 class="menu-item-title">{{myInfoCtrl.menuItem.name}}</h3>
+      					<p class="menu-item-details">{{myInfoCtrl.menuItem.description}}</p>
+    				</div>
+  				</div>
+			</div>
+
+		</div>
+
+	</div>
+
+	<div ng-if="!myInfoCtrl.infoSaved">
+		<div class="text-center">
+			You haven't signed up yet!
+		</div>
+		<div class="text-center">
+			<a ui-sref="public.signUp">Sign up Now!</a>
+		</div>
+	</div>
+
+</div>
